@@ -1,0 +1,7 @@
+# curl for publicizing the IP
+rpiip="$(hostname -I)"
+
+CURLSTRING="{\"text\":\"$rpiip\",\"bot_id\":\"BOT_ID\"}"
+
+curl -d '{"text" : "'"$rpiip"'", "bot_id" : "BOT_ID"}' https://api.groupme.com/v3/bots/post
+
